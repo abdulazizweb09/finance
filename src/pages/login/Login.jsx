@@ -28,7 +28,6 @@ function Login() {
           <label>Create Password</label>
           <div className="password-wrapper">
             <input type="password" placeholder="Enter password" />
-            <span className="eye-icon">👁️</span>
           </div>
           <p className="password-tip">
             Passwords must be at least 8 characters
