@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,
+ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+img{
+    display: flex;
+    object-fit: cover;
+}
+html,body ,#root{
+    height: 100%;
+}
+html{
+    // font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: $global-font;
+}
