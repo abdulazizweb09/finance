@@ -1,6 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 function Home() {
+    let navigate = useNavigate();
+    function regiser() {
+navigate("/register")
+    }
   return (
-    <div>Home</div>
+      <div>Home
+          <button onClick={regiser}>register</button>
+    </div>
   )
 }
 
