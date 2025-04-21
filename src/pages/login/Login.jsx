@@ -64,7 +64,7 @@ function Login() {
             />
           </div>
 
-          <button type="submit">Login</button>
+          <button style={{marginTop:30}} type="submit">Login</button>
 
           <p className="login-text">
             Need to create an account?<a onClick={sign}>Sign Up</a>

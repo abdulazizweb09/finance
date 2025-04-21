@@ -101,11 +101,12 @@
         .login-text {
             text-align: center;
             font-size: 14px;
-
             a {
                 font-weight: bold;
                 color: black;
                 text-decoration: none;
+                margin-left: 10px;
+                cursor: pointer;
             }
         }
     }

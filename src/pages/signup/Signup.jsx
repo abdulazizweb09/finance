@@ -2,16 +2,21 @@ import "./Signup.scss";
 import bg from "../../imgs/sign.png";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useRegister } from "../../hooks/useRegister"; 
+import { useRegister } from "../../hooks/useRegister";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   let [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  let [password, setPassword] = useState("");
+  let [email, setEmail] = useState("");
+  let navigate = useNavigate();
+  let { registerWithGoogle, registerWithEmail } = useRegister();
 
-  const { registerWithGoogle, registerWithEmail } = useRegister();
+  function login() {
+    navigate("/login");
+  }
 
-  const handleSubmit = async (e) => {
+  let handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!name || !email || !password) {
@@ -85,7 +90,7 @@ function Signup() {
           </button>
 
           <p className="login-text">
-            Already have an account? <a href="#">Login</a>
+            Already have an account? <a onClick={login}>Login</a>
           </p>
         </form>
       </div>
