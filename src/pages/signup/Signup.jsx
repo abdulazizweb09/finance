@@ -1,28 +1,38 @@
 import "./Signup.scss";
 import bg from "../../imgs/sign.png";
 import { useState } from "react";
-import { auth } from "../../firebase/firebaseConfig";
 import { toast } from "react-toastify";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useRegister } from "../../hooks/useRegister"; 
+
 function Signup() {
   let [name, setName] = useState("");
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  async function register(e) {
-    e.preventDefault()
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      toast.success('muvafaqiyatlik !!')
-    } catch (err) {
-      toast.error(err.message);
+
+  const { registerWithGoogle, registerWithEmail } = useRegister();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!name || !email || !password) {
+      toast.error("Iltimos, barcha maydonlarni to‘ldiring");
+      return;
     }
-  }
+
+    if (password.length < 8) {
+      toast.error("Parol kamida 8 ta belgidan iborat bo‘lishi kerak");
+      return;
+    }
+
+    await registerWithEmail(name, email, password);
+  };
+
   return (
     <div className="wrapper">
       <div className="login-block">
         <div className="left">
           <img src={bg} alt="" />
-          <h3>finance</h3>
+          <h3>Finance</h3>
           <p className="left-track">
             Keep track of your money and save for your future
           </p>
@@ -32,15 +42,13 @@ function Signup() {
           </p>
         </div>
 
-        <form className="signup-form">
+        <form className="signup-form" onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
 
           <label>Name</label>
           <input
             value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
+            onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Enter your name"
           />
@@ -49,9 +57,7 @@ function Signup() {
           <input
             type="email"
             value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
           />
 
@@ -59,9 +65,7 @@ function Signup() {
           <div className="password-wrapper">
             <input
               value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              onChange={(e) => setPassword(e.target.value)}
               type="password"
               placeholder="Enter password"
             />
@@ -70,8 +74,14 @@ function Signup() {
             Passwords must be at least 8 characters
           </p>
 
-          <button onClick={register} type="submit">
-            Create Account
+          <button type="submit">Create Account</button>
+
+          <button
+            type="button"
+            className="google-button"
+            onClick={registerWithGoogle}
+          >
+            Continue with Google
           </button>
 
           <p className="login-text">
