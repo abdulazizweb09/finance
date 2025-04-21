@@ -3,17 +3,21 @@ import bg from "../../imgs/sign.png";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useRegister } from "../../hooks/useRegister";
+import { useNavigate } from "react-router-dom";
+import useLogin from "../../hooks/useLogin";
 
 function Login() {
-  let [name, setName] = useState("");
   const [password, setPassword] = useState("");
-
-  const { registerWithEmail } = useRegister();
-
+  const [email, setEmail] = useState("");
+  let navigate = useNavigate();
+  let { loginWithEmail } = useLogin();
+  function sign() {
+    navigate("/register");
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!name || !password) {
+    if (!email || !password) {
       toast.error("Iltimos, barcha maydonlarni to‘ldiring");
       return;
     }
@@ -23,7 +27,7 @@ function Login() {
       return;
     }
 
-    await registerWithEmail(name,  password);
+    await loginWithEmail(email, password);
   };
 
   return (
@@ -44,12 +48,11 @@ function Login() {
         <form className="signup-form" onSubmit={handleSubmit}>
           <h1>Login</h1>
 
-          <label>Name</label>
+          <label>Email</label>
           <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            placeholder="Enter your name"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label>Create Password</label>
@@ -58,17 +61,13 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
-              placeholder="Enter password"
             />
           </div>
-          <p className="password-tip">
-            Passwords must be at least 8 characters
-          </p>
 
-          <button type="submit">Create Account</button>
+          <button type="submit">Login</button>
 
           <p className="login-text">
-            Already have an account? <a href="#">Login</a>
+            Need to create an account?<a onClick={sign}>Sign Up</a>
           </p>
         </form>
       </div>
