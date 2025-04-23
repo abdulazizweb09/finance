@@ -1,13 +1,86 @@
-.parent{
+.parent {
     display: flex;
+    background: $beige-100;
 }
-.container{
+.container {
     width: 1090px;
     margin: 0 auto;
 }
-.logo{
+.logo {
     font-weight: 700;
     font-size: $text-preset-1;
     margin-top: $text-preset-1;
     margin-bottom: $text-preset-1;
+}
+.concet {
+    padding: $text-preset-2;
+    background-color: white;
+    border-radius: $spacing-150;
+    .filter {
+        display: flex;
+        font-size: 12px;
+        position: relative;
+        align-items: center;
+        input {
+            width: 320px;
+            padding: $spacing-100;
+            border-radius: $spacing-100;
+            border: 1px solid $beige-500;
+            outline-color: $grey-900;
+            font-size: 15px;
+            &:focus::placeholder {
+                color: $grey-900;
+            }
+        }
+        .search {
+            position: absolute;
+            width: 20px;
+            height: 16px;
+            top:13px;
+            left:280px;
+        }
+        .sort{
+            margin-left: 238px;
+            margin-right: 8px;
+            font-size: 12;
+            color: $grey-500;
+        }
+        .sorts{
+            // width: 100px;
+
+            padding:12px 20px ;
+            // height: 50px;
+            border-radius: 10px;
+            text-align: center;
+            // font-size: ;
+        }
+        .category{
+           margin-left: 24px;
+            margin-right: 8px;
+            font-size: 12px;
+            color: $grey-500; 
+        }
+    }
+    .sender{
+        display: flex;
+        gap: $text-preset-1;
+        margin-top: 36px;
+       p{
+        font-size: 12px;
+        color: $grey-500;
+       }
+       .send{
+        width: 428px;
+       }
+       .cat{
+        width: 120px;
+       }
+       .date{
+        width: 120px;
+       }
+       .amount{
+        width: 200px;
+        text-align: right;
+       }
+    }
 }
