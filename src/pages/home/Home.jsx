@@ -9,12 +9,7 @@ function Home() {
   return (
     <div className={style.home}>
       <Sidebar test={'overview'} />
-      <div className={style.container}>
-        <div className={style.flex}>
-          <p>Budgets</p>
-          <button>+ Add New Budget</button>
-        </div>
-      </div>
+      
     </div>
   );
 }

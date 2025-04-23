@@ -49,6 +49,31 @@ function Transactions() {
             <p className={transactions.date}>Transaction Date</p>
             <p className={transactions.amount}>Amount</p>
           </div>
+          <div className={transactions.card}>
+            {data.length > 0 &&
+              data.map((value, index) => {
+                return (
+                  <div key={index}>
+                    <div className={transactions.cards}>
+                      <img src="https://picsum.photos/40/40" alt="" />
+                      <p className={transactions.name}>{value.name}</p>
+                      <p className={transactions.category}>{value.category}</p>
+                      <p className={transactions.date}>{value.date}</p>
+                      <p
+                        className={`${transactions.amount} ${
+                          parseFloat(value.amount) < 0
+                            ? transactions.red
+                            : transactions.green
+                        }`}
+                      >
+                        {value.amount} { ' '}$
+                      </p>
+                    </div>
+                    <div className={transactions.tiziq}></div>
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
     </div>
