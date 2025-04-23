@@ -1,8 +1,11 @@
-import 'Post.scss'
+import Sidebar from '../../components/sidebar/Sidebar'
+import pots from './Post.module.scss'
 function Post() {
   return (
-    <div>Post</div>
-  )
+    <div>
+      <Sidebar test={"pots"} />
+    </div>
+  );
 }
 
 export default Post

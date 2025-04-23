@@ -1,0 +1,13 @@
+.parent{
+    display: flex;
+}
+.container{
+    width: 1090px;
+    margin: 0 auto;
+}
+.logo{
+    font-weight: 700;
+    font-size: $text-preset-1;
+    margin-top: $text-preset-1;
+    margin-bottom: $text-preset-1;
+}

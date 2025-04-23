@@ -1,0 +1,26 @@
+.home {
+    display: flex;
+    background-color: #f8f4f0;
+}
+.container {
+    width: 1060px;
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    p {
+        font-size: 32px;
+        margin-top: 41px;
+    }
+    button {
+        padding: 16px;
+        height: 53px;
+        margin-top: 33.5px;
+        background-color: #201f24;
+        border-radius: 10px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}

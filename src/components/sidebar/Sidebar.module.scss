@@ -1,0 +1,73 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: #1a1a1d;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: sans-serif;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius:12px;
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-top: 40px;
+    margin-left: 32px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    .menu-item {
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      color: #aaa;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      &:hover {
+        background-color: #2b2b2f;
+        color: #fff;
+      }
+    }
+  }
+
+  .minimize {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #bbb;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.alt{
+  background-color: #F8F4F0;
+  color: #201F24;
+  padding-left: 32px;
+  width: 276px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius:12px ;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.menuItem{
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 16px;
+  cursor: pointer;
+  margin-left: 32px;
+  width: 276px;
+}

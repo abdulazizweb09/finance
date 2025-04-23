@@ -1,8 +1,11 @@
-import "RecurringBills.scss";
+import Sidebar from "../../components/sidebar/Sidebar";
+import "./RecurringBills.module.scss";
 function RecurringBills() {
   return (
-    <div>RecurringBills</div>
-  )
+    <div>
+      <Sidebar test={"bills"} />
+    </div>
+  );
 }
 
 export default RecurringBills
