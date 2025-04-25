@@ -49,6 +49,26 @@
             margin-top: 32px;
             .left {
                 width: 608px;
+                .tran {
+                    background-color: white;
+                    padding: 32px;
+                    margin-top: 24px;
+                    border-radius: $spacing-150;
+
+                    .post {
+                        display: flex;
+                        h4 {
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+                        p {
+                            color: $grey-500;
+                            cursor: pointer;
+                            margin-left:330px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
             }
             .pots {
                 background-color: white;

@@ -1,11 +1,11 @@
 import Sidebar from "../../components/sidebar/Sidebar";
-import styles from"./Home.module.scss";
+import styles from "./Home.module.scss";
 import { useCollectionsData } from "../../hooks/data";
-import righ from '../../imgs/right.png'
+import righ from "../../imgs/right.png";
 import amount from "../../imgs/amount.svg";
 function Home() {
-  let {data}=useCollectionsData()
-  console.log(data); 
+  let { data } = useCollectionsData();
+  console.log(data);
   return (
     <div className={styles.home}>
       <Sidebar test={"overview"} />
@@ -75,6 +75,13 @@ function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className={styles.tran}>
+              <div className={styles.post}>
+                <h4>Transactions</h4>
+                <p>View All</p>
+                <img src={righ} alt="" />
               </div>
             </div>
           </div>
