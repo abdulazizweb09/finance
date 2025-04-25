@@ -38,7 +38,7 @@ function Home() {
                   <img src={amount} alt="" />
                   <div>
                     <p className={styles.p}>Total Saved</p>
-                    <p className={styles.amount}>${data?.pots[0].total}</p>
+                    <p className={styles.amount}>${data?.pots[0].target}</p>
                   </div>
                 </div>
                 <div className={styles.flex}>
@@ -47,14 +47,14 @@ function Home() {
                       <div className={styles.tiziq}></div>
                       <div className={styles.savingFlex}>
                         <p className={styles.saving}>Savings</p>
-                        <p className={styles.dol}>$159</p>
+                        <p className={styles.dol}>${data?.pots[0].total}</p>
                       </div>
                     </div>
                     <div style={{ marginTop: 16 }} className={styles.a}>
                       <div className={styles.tiziq}></div>
                       <div className={styles.savingFlex}>
                         <p className={styles.saving}>Concert Ticket</p>
-                        <p className={styles.dol}>$159</p>
+                        <p className={styles.dol}>${data?.pots[1].total}</p>
                       </div>
                     </div>
                   </div>
@@ -62,15 +62,15 @@ function Home() {
                     <div className={styles.a}>
                       <div className={styles.tiziq}></div>
                       <div className={styles.savingFlex}>
-                        <p className={styles.saving}>Savings</p>
-                        <p className={styles.dol}>$159</p>
+                        <p className={styles.saving}>Gift</p>
+                        <p className={styles.dol}>${data?.pots[2].target}</p>
                       </div>
                     </div>
                     <div style={{ marginTop: 16 }} className={styles.a}>
                       <div className={styles.tiziq}></div>
                       <div className={styles.savingFlex}>
-                        <p className={styles.saving}>Concert Ticket</p>
-                        <p className={styles.dol}>$159</p>
+                        <p className={styles.saving}>New Laptop</p>
+                        <p className={styles.dol}>${data?.pots[2].total}</p>
                       </div>
                     </div>
                   </div>
@@ -78,7 +78,15 @@ function Home() {
               </div>
             </div>
           </div>
-          <div>right</div>
+          <div>
+            <div className={styles.block}>
+              <div className={styles.post}>
+                <h4>Pots</h4>
+                <p>See Details</p>
+                <img src={righ} alt="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

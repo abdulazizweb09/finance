@@ -125,6 +125,28 @@
                     display: flex;
                 }
             }
+            .post {
+                display: flex;
+                margin-bottom: 20px;
+                h4 {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                p {
+                    color: $grey-500;
+                    cursor: pointer;
+                    margin-left: 186px;
+                    margin-right: 10px;
+                }
+                img {
+                    background-size: cover;
+                }
+            }
+            .block {
+                background-color: white;
+                padding: 32px;
+                border-radius: $spacing-150;
+            }
         }
     }
 }
