@@ -1,0 +1,108 @@
+.home {
+    display: flex;
+    background: #f6f2ef;
+
+    .dashboard {
+        width: 1060px;
+        margin: 0 auto;
+        h2 {
+            margin-top: 40px;
+            font-size: $text-preset-2;
+            margin-bottom: 32px;
+        }
+        .cards {
+            display: flex;
+            gap: 24px;
+            .card {
+                padding: 24px;
+                background-color: $grey-900;
+                color: white;
+                border-radius: $spacing-150;
+                width: 337px;
+                .cardParagraph {
+                    font-size: 14px;
+                    margin-bottom: 12px;
+                }
+                .price {
+                    font-weight: 700;
+                    font-size: 32px;
+                }
+            }
+            .cardWhite {
+                background-color: white;
+                padding: 24px;
+                border-radius: $spacing-150;
+                width: 337px;
+            }
+            .cardParagraph {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            .price {
+                font-weight: 700;
+                font-size: 32px;
+            }
+        }
+        .warpper {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+            .left {
+                width: 608px;
+            }
+            .pots {
+                background-color: white;
+                border-radius: $spacing-150;
+                align-items: center;
+                padding: 32px;
+                .post {
+                    display: flex;
+                    h4 {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                    p {
+                        color: $grey-500;
+                        cursor: pointer;
+                        margin-left: 390px;
+                        margin-right: 10px;
+                    }
+                    img {
+                        background-size: cover;
+                    }
+                }
+            }
+            .amounts {
+                display: flex;
+                gap: 16px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+                .col {
+                    background-color: $beige-100;
+                    display: flex;
+                    gap: 16px;
+                    align-items: center;
+                    width: 247px;
+                    height: 110px;
+                    border-radius: $spacing-150;
+                    img{
+                        width: 26px;
+                        height: 34px;
+                        margin-left: 16px;
+                    }
+                    .p{
+                        font-size: 14px;
+                    }
+                    .amount{
+                        font-size: 32px;
+                        margin-top: 11px;
+                    }
+                }
+                .savingFlex{
+                    width: 130px;
+                    
+            }
+        }
+    }
+}
+}

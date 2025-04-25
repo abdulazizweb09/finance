@@ -7,36 +7,29 @@ import Budgets from "./pages/budgets/Budgets.jsx";
 import Transactions from "./pages/transactions/Transactions.jsx";
 import Post from "./pages/post/Post.jsx";
 import RecurringBills from "./pages/recurringBills/RecurringBills.jsx";
-// import { getAuth, onAuthStateChanged } from "firebase/auth";
-// import { useDispatch, useSelector } from "react-redux";
-// import { toast } from "react-toastify";
-// import { add, setloading } from "./hooks/setUser.js";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { add, remuv } from "./hooks/setUser.js";
+import { toast } from "react-toastify";
 
 function App() {
-  // let dispatch = useDispatch();
-  // let navigate = useNavigate();
-  // const { user } = useSelector((state) => state.user);
-  // let auth = getAuth();
-  // useEffect(function() {
-  // if (!user) {
-  //   navigate("/login");
-  // }    
-  // },[])
-  // useEffect(() => {
-  //   dispatch(setloading(true));
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+  const auth = getAuth();
 
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       dispatch(add(user));
-  //       // navigate("/");
-  //     } else {
-  //       dispatch(remuv());
-  //       toast.error("User Already Sign Out");
-  //       navigate("/login");
-  //     }
-  //     dispatch(setloading(false));
-  //   });
-  // }, []);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(add(user));
+      } else {
+        dispatch(remuv());
+        toast.error("Foydalanuvchi tizimdan chiqqan");
+        navigate("/login");
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
   return (
     <div>
       <Routes>
