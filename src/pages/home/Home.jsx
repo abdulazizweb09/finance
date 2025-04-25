@@ -42,13 +42,39 @@ function Home() {
                   </div>
                 </div>
                 <div className={styles.flex}>
-                  <div className={styles.savingFlex}>
-                    <p>Savings</p>
-                    <p>$159</p>
+                  <div>
+                    <div className={styles.a}>
+                      <div className={styles.tiziq}></div>
+                      <div className={styles.savingFlex}>
+                        <p className={styles.saving}>Savings</p>
+                        <p className={styles.dol}>$159</p>
+                      </div>
+                    </div>
+                    <div style={{ marginTop: 16 }} className={styles.a}>
+                      <div className={styles.tiziq}></div>
+                      <div className={styles.savingFlex}>
+                        <p className={styles.saving}>Concert Ticket</p>
+                        <p className={styles.dol}>$159</p>
+                      </div>
+                    </div>
                   </div>
-                  <div></div>
+                  <div>
+                    <div className={styles.a}>
+                      <div className={styles.tiziq}></div>
+                      <div className={styles.savingFlex}>
+                        <p className={styles.saving}>Savings</p>
+                        <p className={styles.dol}>$159</p>
+                      </div>
+                    </div>
+                    <div style={{ marginTop: 16 }} className={styles.a}>
+                      <div className={styles.tiziq}></div>
+                      <div className={styles.savingFlex}>
+                        <p className={styles.saving}>Concert Ticket</p>
+                        <p className={styles.dol}>$159</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div></div>
               </div>
             </div>
           </div>

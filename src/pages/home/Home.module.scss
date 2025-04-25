@@ -77,32 +77,54 @@
                 gap: 16px;
                 margin-top: 20px;
                 flex-wrap: wrap;
+                .flex {
+                    margin-top: 4px;
+                    display: flex;
+                }
                 .col {
                     background-color: $beige-100;
                     display: flex;
                     gap: 16px;
                     align-items: center;
-                    width: 247px;
+                    width: 200px;
                     height: 110px;
+                    margin-right: 20px;
                     border-radius: $spacing-150;
-                    img{
+                    img {
                         width: 26px;
                         height: 34px;
                         margin-left: 16px;
                     }
-                    .p{
+                    .p {
                         font-size: 14px;
                     }
-                    .amount{
+                    .amount {
                         font-size: 32px;
                         margin-top: 11px;
                     }
                 }
-                .savingFlex{
+                .savingFlex {
                     width: 130px;
-                    
+                }
+                .saving {
+                    color: $grey-500;
+                    font-size: 12px;
+                }
+                .dol {
+                    margin-top: 8px;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+                .tiziq {
+                    width: 4px;
+                    height: 43px;
+                    background-color: #277c78;
+                    margin-right: 16px;
+                }
+                .a {
+                    display: flex;
+                }
             }
         }
     }
-}
 }
