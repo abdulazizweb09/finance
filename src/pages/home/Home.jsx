@@ -1,9 +1,5 @@
-import { collection } from "firebase/firestore";
 import Sidebar from "../../components/sidebar/Sidebar";
-import styles from"./home.module.scss";
-import { getDocs } from "firebase/firestore/lite";
-import { useEffect, useState } from "react";
-import { db } from "../../firebase/firebaseConfig";
+import styles from"./Home.module.scss";
 import { useCollectionsData } from "../../hooks/data";
 import righ from '../../imgs/right.png'
 import amount from "../../imgs/amount.svg";
