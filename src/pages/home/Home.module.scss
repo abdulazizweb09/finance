@@ -64,8 +64,26 @@
                         p {
                             color: $grey-500;
                             cursor: pointer;
-                            margin-left:330px;
+                            margin-left: 340px;
                             margin-right: 10px;
+                        }
+                    }
+                    .cards{
+                        display: block;
+                        .card{
+                            width: 100%;
+                            display: flex;
+                            background-color: white;
+                            color: $grey-900;
+                            justify-content: space-between;
+                          .cardFlex{
+                            display: flex;
+                            align-items: center;
+                          }
+                          img{
+                            border-radius: 100%;
+                            margin-right: 16px;
+                          }
                         }
                     }
                 }

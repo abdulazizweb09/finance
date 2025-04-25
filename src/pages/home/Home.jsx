@@ -3,6 +3,7 @@ import styles from "./Home.module.scss";
 import { useCollectionsData } from "../../hooks/data";
 import righ from "../../imgs/right.png";
 import amount from "../../imgs/amount.svg";
+import Chart from "../../components/chart/Chart";
 function Home() {
   let { data } = useCollectionsData();
   console.log(data);
@@ -83,6 +84,22 @@ function Home() {
                 <p>View All</p>
                 <img src={righ} alt="" />
               </div>
+              <div className={styles.cards}>
+                {data &&
+                  data.transactions.map((value, index) => {
+                    return (
+                      <div key={index} className={styles.card}>
+                        <div className={styles.cardFlex}>
+                          <img src="https://picsum.photos/40/40" alt="" />
+                          <p>{value.name}</p>
+                        </div>
+                        <div>
+                          <p>{value.amount}$</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
           </div>
           <div>
@@ -92,6 +109,16 @@ function Home() {
                 <p>See Details</p>
                 <img src={righ} alt="" />
               </div>
+              <Chart
+                budgets={
+                  data?.budgets.map((t) => ({
+                    category: t.name, 
+                    maximum: t.amount,
+                    theme:
+                      "#" + Math.floor(Math.random() * 16777215).toString(16), 
+                  })) || []
+                }
+              />
             </div>
           </div>
         </div>
