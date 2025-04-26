@@ -1,6 +1,6 @@
 import transactions from"./Transactions.module.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
-import search from "../../imgs/search.svg"
+import searchs from "../../imgs/search.svg"
 import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore"; 
@@ -49,7 +49,7 @@ console.log(search);
               type="text"
               placeholder="Search transaction"
             />
-            <img src={search} className={transactions.search} alt="" />
+            <img src={searchs} className={transactions.search} alt="" />
             <p className={transactions.sort}>Sort by</p>
             <select className={transactions.sorts}>
               <option value="lates">Lates</option>
