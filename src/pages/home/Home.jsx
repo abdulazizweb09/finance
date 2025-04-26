@@ -109,16 +109,7 @@ function Home() {
                 <p>See Details</p>
                 <img src={righ} alt="" />
               </div>
-              <Chart
-                budgets={
-                  data?.budgets.map((t) => ({
-                    category: t.name, 
-                    maximum: t.amount,
-                    theme:
-                      "#" + Math.floor(Math.random() * 16777215).toString(16), 
-                  })) || []
-                }
-              />
+              <div>{data && <Chart budgets={data?.budgets} />}</div>
             </div>
           </div>
         </div>

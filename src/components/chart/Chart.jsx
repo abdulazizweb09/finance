@@ -31,6 +31,7 @@ function Chart({ budgets }) {
         fontFamily: "Public sans",
       },
       colors: budgets.map((b) => b.theme),
+      
       labels: budgets.map((b) => b.category),
 
       responsive: [
@@ -48,6 +49,7 @@ function Chart({ budgets }) {
       ],
     },
   });
+console.log(budgets.map((b) => b.theme));
 
   return (
     <div>
