@@ -6,7 +6,8 @@ import { db } from "../../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore"; 
 
 function Transactions() {
-  let [data,setData]=useState([]);
+  let [search,setSearch]=useState('')
+  let [data,setData]=useState([])
   useEffect(function() {
     let fetchData = async () => {
       let t = await getDocs(collection(db, 'transactions'))
@@ -19,7 +20,18 @@ function Transactions() {
     fetchData()
 
   }, [])
+  // useEffect(function() {
+  //   setData(
+  //     data.filter(
+  //       (item) => item.category.toLowerCase() === search.toLowerCase()
+  //     )
+  //   );
+  // },[search])
+  let filteredData = data.filter((item) =>
+    item.category.toLowerCase().includes(search.toLowerCase())
+  );
     console.log(data); 
+console.log(search);
 
   
   return (
@@ -29,7 +41,14 @@ function Transactions() {
         <h2 className={transactions.logo}>Transactions</h2>
         <div className={transactions.concet}>
           <div className={transactions.filter}>
-            <input type="text" placeholder="Search transaction" />
+            <input
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+              type="text"
+              placeholder="Search transaction"
+            />
             <img src={search} className={transactions.search} alt="" />
             <p className={transactions.sort}>Sort by</p>
             <select className={transactions.sorts}>
@@ -50,8 +69,8 @@ function Transactions() {
             <p className={transactions.amount}>Amount</p>
           </div>
           <div className={transactions.card}>
-            {data.length > 0 &&
-              data.map((value, index) => {
+            {filteredData.length > 0 &&
+              filteredData.map((value, index) => {
                 return (
                   <div key={index}>
                     <div className={transactions.cards}>
@@ -66,7 +85,7 @@ function Transactions() {
                             : transactions.green
                         }`}
                       >
-                        {value.amount} { ' '}$
+                        {value.amount} $
                       </p>
                     </div>
                     <div className={transactions.tiziq}></div>
