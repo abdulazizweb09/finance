@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Sidebar({ test }) {
-  let [shownavbar, setshownavbar] = useState(true);
+  let [shownavbar, setshownavbar] = useState(localStorage.getItem('min'||'false'));
   let navigate=useNavigate()
   function home() {
     navigate('/')
@@ -26,16 +26,24 @@ function Sidebar({ test }) {
     navigate('/bills')
   }
   let location = useLocation(); 
+  useEffect(
+    function () {
+      localStorage.setItem("min", JSON.stringify(shownavbar));
+    },
+    [shownavbar]
+  );
 
   useEffect(() => {
-    setshownavbar(false); 
+    let res = JSON.parse(localStorage.getItem("min"));
+    setshownavbar(res);
   }, [location.pathname]);
+
   return (
-    <div className={shownavbar?styles.sidebar:styles.minSidebar}>
+    <div className={shownavbar ? styles.sidebar : styles.minSidebar}>
       <div className={styles.logo}>finance</div>
 
       {!shownavbar && (
-        <div className={`styles.menu ${styles.min}`}>
+        <div className={`${styles.menu} ${styles.min}`}>
           <div
             onClick={home}
             className={test == "overview" ? styles.alt : styles.menuItem}

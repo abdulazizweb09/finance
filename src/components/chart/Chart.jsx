@@ -30,8 +30,11 @@ function Chart({ budgets }) {
         type: "donut",
         fontFamily: "Public sans",
       },
+      legend: {
+        show: false, 
+      },
       colors: budgets.map((b) => b.theme),
-      
+
       labels: budgets.map((b) => b.category),
 
       responsive: [
