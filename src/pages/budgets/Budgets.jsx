@@ -24,22 +24,31 @@ function Budgets() {
             <div>{data && <Chart budgets={data?.budgets} />}</div>
             <p className={style.spend}>Spending Summary</p>
             <div>
-              {data && data.budgets.map((value, index) => {
-                return (
-                  <div className={style.card} key={index}>
-                    <div
-                      className={style.col}
-                      style={{ backgroundColor: value.theme }}
-                    ></div>
-                    <p>{value.category}</p>
-                    <h3>{value.maximum}$</h3>
-                    <h3>of 50$</h3>
-                  </div>
-                );
-              })}
+              {data &&
+                data.budgets.map((value, index) => {
+                  return (
+                    <div className={style.card} key={index}>
+                      <div
+                        className={style.col}
+                        style={{ backgroundColor: value.theme }}
+                      ></div>
+                      <p>{value.category}</p>
+                      <h3 className={style.price}>${value.maximum}</h3>
+                    </div>
+                  );
+                })}
             </div>
           </div>
-          <div></div>
+          <div className={style.right}>
+            {data && data.budgets.map((value, index) => {
+              return (
+                <div key={index} className={style.cardsFlex}>
+                  <p style={{backgroundColor:value.theme}} className={style.color}></p>
+                  <h3>{value.category}</h3>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

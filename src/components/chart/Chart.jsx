@@ -52,7 +52,6 @@ function Chart({ budgets }) {
       ],
     },
   });
-console.log(budgets.map((b) => b.theme));
 
   return (
     <div>

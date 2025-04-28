@@ -25,32 +25,52 @@
     }
 }
 
-.warpper{
+.warpper {
     display: flex;
     gap: 24px;
 }
-.left{
+.left {
     width: 428px;
     padding: 32px;
     background-color: white;
     border-radius: $spacing-150;
-    .spend{
+    .spend {
         font-weight: 700;
         font-size: 20px;
         color: $grey-900;
         margin-top: 32px;
         margin-bottom: 24px;
     }
-    .card{
+    .card {
         width: 100%;
         height: 21px;
         margin-top: 33px;
         display: flex;
-        .col{
-        height: 100%;
-        width: 4px;
-        margin-right: 16px;
+        .col {
+            height: 100%;
+            width: 4px;
+            margin-right: 16px;
+        }
+        .price {
+            position: absolute;
+            left: 670px;
+        }
     }
+}
+.right {
+    width: 608px;
+
+    .cardsFlex {
+        display: flex;
+        gap: 16px;
+        background-color: white;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 20px;
+        .color {
+            width: $spacing-150;
+            height: $spacing-150;
+            border-radius: 100%;
+        }
     }
-    
 }
