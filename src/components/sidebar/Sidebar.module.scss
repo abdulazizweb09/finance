@@ -1,6 +1,6 @@
 .sidebar {
   width: 300px;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #1a1a1d;
   display: flex;
   flex-direction: column;
@@ -62,6 +62,13 @@
   align-items: center;
   gap: 16px;
 }
+.logo {
+    font-size:1.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    margin-top: 40px;
+    margin-left:10px;
+  }
 .menuItem{
   display: flex;
   align-items: center;
@@ -70,4 +77,33 @@
   cursor: pointer;
   margin-left: 32px;
   width: 276px;
+}
+.min{
+  width: 88px;
+  .alt{
+    width: 80px;
+  }
+}
+.minSidebar{
+  width: 88px;
+  height: 100vh;
+  background-color: #1a1a1d;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: sans-serif;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius:12px;
+  .minimize {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #bbb;
+    cursor: pointer;
+
+    &:hover {
+      color: #fff;
+    }
+}
 }
