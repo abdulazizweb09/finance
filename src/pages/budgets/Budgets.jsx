@@ -44,7 +44,7 @@ function Budgets() {
               return (
                 <div key={index} className={style.cardsFlex}>
                   <p style={{backgroundColor:value.theme}} className={style.color}></p>
-                  <h3>{value.category}</h3>
+                  <h3>{value.category}  </h3>
                 </div>
               );
             })}
