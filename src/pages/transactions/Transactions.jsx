@@ -28,7 +28,7 @@ function Transactions() {
   //   );
   // },[search])
   let filteredData = data.filter((item) =>
-    item.category.toLowerCase().includes(search.toLowerCase())
+    item.name.toLowerCase().includes(search.toLowerCase())
   );
     console.log(data); 
 console.log(search);
