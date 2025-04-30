@@ -30,8 +30,6 @@ function Transactions() {
   let filteredData = data.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
-    console.log(data); 
-console.log(search);
 
   
   return (
